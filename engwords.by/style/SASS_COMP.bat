@@ -1,0 +1,1 @@
+sass --watch "C:\ospanel\domains\engwords.by\style\style.scss:C:\ospanel\domains\engwords.by\style\style.css"
