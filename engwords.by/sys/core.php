@@ -13,23 +13,31 @@ function clearHTML($html){
 // Работа с БД
 function dbInit(){
 	$config = parse_ini_file($_SERVER["DOCUMENT_ROOT"].'/sys/config.ini', true);
-	echo '<pre>';
-	print_r($config);
 	$dsn = "{$config['database']['dbdriver']}:host={$config['database']['dbhost']};dbname={$config['database']['dbname']}";
 	return new PDO($dsn, $config['database']['dbuser'], $config['database']['dbpassword']);
 }
 function dbRegister($pdo, $login, $email, $password){
+	$login = $pdo->quote($login);
 	$email = $pdo->quote($email);
 	$password = $pdo->quote(md5($password));
+
+	$sql_check = "SELECT COUNT(id) FROM ed_users WHERE login=$login";
+	$stmt = $pdo->query($sql_check);
+	$row = $stmt->fetch(PDO::FETCH_NUM);
+	if($row[0] > 0) {
+	    return 'Аккаунт с тиким логином уже зарегистрирован!';
+	}
 	$sql_check = "SELECT COUNT(id) FROM ed_users WHERE email=$email";
 	$stmt = $pdo->query($sql_check);
 	$row = $stmt->fetch(PDO::FETCH_NUM);
 	if($row[0] > 0) {
 	    return 'Аккаунт с этой почтой уже зарегистрирован!';
-	}else{
+	}
+	else
+	{
 	    // Добавляем учетную запись в таблицу ts_users
 	    $sql_insert = "INSERT INTO ed_users (login, email, password) VALUES ($login, $email, $password)";
-	    $stmt = $pdo->query($sql_insert);
+	    $stmt = $pdo->exec($sql_insert);
 	}
 	return '';
 }
