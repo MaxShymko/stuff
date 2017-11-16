@@ -1,31 +1,37 @@
-@import url("https://fonts.googleapis.com/css?family=Poppins:400");
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,600");
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400");
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,600,400i&subset=cyrillic,600&subset=cyrillic");
 * {
   margin: 0;
   padding: 0; }
 
-html, body {
-  height: 100%; }
-
 input:focus {
   outline: none; }
 
+.error {
+  color: #333;
+  background-color: #FFBABA;
+  padding: 10px 15px;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600; }
+
 body {
   color: #333;
-  background-color: #48B484;
+  background: url(/img/backgr.png) center bottom no-repeat fixed #48B484;
   display: flex;
   justify-content: center; }
   body .main {
-    flex-basis: 90%;
+    min-width: 900px;
+    flex-basis: 70%;
     background-color: #FAF8F2;
-    border-radius: 5px;
-    margin: 10px; }
+    border-radius: 0 0 5px 5px;
+    margin-bottom: 10px; }
     body .main .header {
       height: 60px;
       margin-bottom: 5px;
       background: #2e2e2e;
-      border-radius: 5px;
+      border-radius: 0 0 5px 5px;
       color: #fff;
       display: flex;
       justify-content: space-between; }
@@ -81,5 +87,8 @@ body {
             border: none;
             color: #fff;
             cursor: pointer; }
+      body .main .content .registerborder {
+        padding: 30px 0 10px 0;
+        flex-basis: 50%; }
 
 /*# sourceMappingURL=style.css.map */

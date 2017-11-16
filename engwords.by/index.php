@@ -1,46 +1,22 @@
 <?php
-	include_once "config.php";
+//https://golos.io/@rusldv
+	require_once($_SERVER["DOCUMENT_ROOT"].'/sys/core.php');
 
-	if($_POST["submit"]) {
+	$request = explode("/", $_SERVER["REQUEST_URI"]);
 
+	switch($request[1]) {
+		case '':
+			$tpl = 'login';
+		break;
+		case 'registration':
+			$error = registrationCode();
+			$tpl = 'registration';
+		break;
+		case 'login':
+			$tpl = "login";
+		break;
+		default:
+			$tpl = "test";
 	}
+	include_once($_SERVER["DOCUMENT_ROOT"].'/sys/templates/index.tpl.php');
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>engwords</title>
-	<link rel="stylesheet" href="/style/style.css">
-</head>
-<body>
-	<div class="main">
-		<div class="header">
-			<div class="logo">
-				EngDict
-			</div>
-			<div class="links">
-				<ul>
-					<li><a href="#">Add words</a></li>
-					<li><a href="#">Pass the test</a></li>
-				</ul>
-			</div>
-		</div>
-		<div class="content">
-			<div class="loginborder">
-				<h1>Войдите в аккаунт</h1>
-				<form action="/" method="POST" id="login">
-					Логин<br>
-					<input class="formlogtext" type="text" name="login">
-					<br><br>
-					Пароль<br>
-					<input class="formlogtext" type="password" name="password">
-					<br><br>
-					<input id="formlogsub" type="submit" value="Войти" name="submit">
-				</form>
-			</div>
-		</div>
-	</div>
-
-</body>
-</html>
