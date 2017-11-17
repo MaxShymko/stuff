@@ -1,22 +1,37 @@
 <?php
 //https://golos.io/@rusldv
-	require_once($_SERVER["DOCUMENT_ROOT"].'/sys/core.php');
+	define(ROOT, $_SERVER['DOCUMENT_ROOT']);
+	require_once(ROOT.'/sys/core.php');
+
+	//db connect
+	$pdo = dbInit();
 
 	$request = explode("/", $_SERVER["REQUEST_URI"]);
 
+	//is authorize
+	$this_id = check($pdo, $_COOKIE['id'], $_COOKIE['hash']);
+	if(!$this_id)
+		$request[1] = 'login';
+
 	switch($request[1]) {
-		case '':
-			$tpl = 'login';
-		break;
 		case 'registration':
 			$error = registrationCode();
 			$tpl = 'registration';
 		break;
+		case 'logout':
+			logoutCode();
+		break;
 		case 'login':
+			$error = loginCode();
 			$tpl = "login";
 		break;
+		case 'addwords':
+			$error = addwordsCode();
+			$tpl = "addwords";
+		break;
 		default:
+			$error = testCode();
 			$tpl = "test";
 	}
-	include_once($_SERVER["DOCUMENT_ROOT"].'/sys/templates/index.tpl.php');
+	include_once(ROOT.'/templates/index.tpl.php');
 ?>

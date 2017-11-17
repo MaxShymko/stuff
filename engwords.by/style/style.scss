@@ -15,6 +15,10 @@ input:focus {
 		outline: none;
 }
 
+a {
+	text-decoration: none;
+}
+
 .error {
 	color: #333;
 	background-color: #FFBABA;
@@ -26,7 +30,7 @@ input:focus {
 
 body {
 	color: #333;
-	background: url(/img/backgr.png) center bottom no-repeat fixed #48B484;
+	background: url(/style/img/backgr.png) center bottom no-repeat fixed #48B484;
 	display: flex;
 	justify-content: center;
 	.main {
@@ -58,7 +62,6 @@ body {
 					a {
 						padding: 10px 0;
 						color: #fff;
-						text-decoration: none;
 						&:hover {
 							color: #48B484;
 						}
@@ -85,7 +88,7 @@ body {
 					font-size: 30px;
 					text-align: center;
 				}
-				form#login {
+				form#login, form#registration {
 					color: #333;
 					margin: 30px 15px;
 					text-align: center;
@@ -103,6 +106,17 @@ body {
 						border: none;
 						color: #fff;
 						cursor: pointer;
+					}
+				}
+				p {
+					text-align: center;
+					a {
+						color: #e36209;
+						opacity: 0.8;
+						transition: 0.3s;
+						&:hover {
+							opacity: 1.0;
+						}
 					}
 				}
 			}

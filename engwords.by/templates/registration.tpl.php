@@ -1,6 +1,6 @@
 <div class="loginborder registerborder">
 	<h1>Зарегистрировать аккаунт</h1>
-	<form action="/registration" method="POST" id="login">
+	<form action="/registration" method="POST" id="registration">
 		Логин<br>
 		<input class="formlogtext" type="text" name="login" maxlength="10" value="<?=$_POST['login']?>" required>
 		<br><br>
@@ -15,5 +15,6 @@
 		<br><br>
 		<input id="formlogsub" type="submit" value="Регистрация" name="submit">
 	</form>
+	<p>Уже есть аккаунт? <a href="/login">Войти</a></p>
 	<?php if($error !== '') { echo '<div class="error">'.$error.'</div>'; } ?>
 </div>

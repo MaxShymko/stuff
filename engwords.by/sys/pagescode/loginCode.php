@@ -1,16 +1,15 @@
-<?php
-function registrationCode() {
+<?php 
+//Возвращает ошибку или её отсутствие
+function loginCode() {
 	if($_SERVER['REQUEST_METHOD'] == 'POST'){
-		if($_POST['password1'] !== $_POST['password2'])
-			return 'Пароли не совпадают!';
-		if(strlen($_POST['password1']) < 6 || strlen($_POST['password1']) > 30)
+		if(strlen($_POST['password']) < 6 || strlen($_POST['password']) > 30)
 			return 'Пароль не может быть менее 6 и более 30 символов!';
 		if(strlen($_POST['login']) < 1 || strlen($_POST['login']) > 10)
 			return 'Логин не может быть менее 1 и более 10 символов!';
 
-		$msg = dbRegister($GLOBALS['pdo'], $_POST['login'], $_POST['email'], $_POST['password1']);
+		$msg = dbLogin($GLOBALS['pdo'], $_POST['login'], $_POST['password']);
 		if($msg == '') {
-			header('Location: /login');
+			header('Location: /test');
 		}
 		else
 			return $msg;

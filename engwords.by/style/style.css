@@ -8,6 +8,9 @@
 input:focus {
   outline: none; }
 
+a {
+  text-decoration: none; }
+
 .error {
   color: #333;
   background-color: #FFBABA;
@@ -18,7 +21,7 @@ input:focus {
 
 body {
   color: #333;
-  background: url(/img/backgr.png) center bottom no-repeat fixed #48B484;
+  background: url(/style/img/backgr.png) center bottom no-repeat fixed #48B484;
   display: flex;
   justify-content: center; }
   body .main {
@@ -48,8 +51,7 @@ body {
           font-family: 'Montserrat', sans-serif; }
           body .main .header .links ul li a {
             padding: 10px 0;
-            color: #fff;
-            text-decoration: none; }
+            color: #fff; }
             body .main .header .links ul li a:hover {
               color: #48B484; }
     body .main .content {
@@ -70,23 +72,31 @@ body {
           color: #333;
           font-size: 30px;
           text-align: center; }
-        body .main .content .loginborder form#login {
+        body .main .content .loginborder form#login, body .main .content .loginborder form#registration {
           color: #333;
           margin: 30px 15px;
           text-align: center; }
-          body .main .content .loginborder form#login input.formlogtext {
+          body .main .content .loginborder form#login input.formlogtext, body .main .content .loginborder form#registration input.formlogtext {
             color: #555;
             font-size: 20px;
             margin: 5px 0;
             width: 230px;
             border: 1px solid #e7e7e7;
             padding: 5px 10px; }
-          body .main .content .loginborder form#login input#formlogsub {
+          body .main .content .loginborder form#login input#formlogsub, body .main .content .loginborder form#registration input#formlogsub {
             padding: 10px 35px;
             background-color: #48B484;
             border: none;
             color: #fff;
             cursor: pointer; }
+        body .main .content .loginborder p {
+          text-align: center; }
+          body .main .content .loginborder p a {
+            color: #e36209;
+            opacity: 0.8;
+            transition: 0.3s; }
+            body .main .content .loginborder p a:hover {
+              opacity: 1.0; }
       body .main .content .registerborder {
         padding: 30px 0 10px 0;
         flex-basis: 50%; }
