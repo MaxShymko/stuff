@@ -10,7 +10,7 @@
 
 	//is authorize
 	$this_id = check($pdo, $_COOKIE['id'], $_COOKIE['hash']);
-	if(!$this_id)
+	if(!$this_id && $request[1] != 'registration')
 		$request[1] = 'login';
 
 	switch($request[1]) {

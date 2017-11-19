@@ -14,7 +14,7 @@
 			<div class="links">
 				<ul>
 					<li>
-						<?php 
+						<?php
 						if($GLOBALS['this_id'] == 0) 
 							echo '<a href="/login">Login</a>';
 						else 
@@ -29,5 +29,8 @@
 			<?php include_once(ROOT.'/templates/'.$tpl.'.tpl.php'); ?>
 		</div>
 	</div>
+
+	<script src="/sys/js/jquery-3.2.1.min.js"></script>
+	<script src="/sys/js/main.js"></script>
 </body>
 </html>

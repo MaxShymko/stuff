@@ -5,13 +5,14 @@
   margin: 0;
   padding: 0; }
 
-input:focus {
+input:focus, button:focus {
   outline: none; }
 
 a {
   text-decoration: none; }
 
 .error {
+  margin: 20px 0 0 0;
   color: #333;
   background-color: #FFBABA;
   padding: 10px 15px;
@@ -59,14 +60,16 @@ body {
       padding: 5px 10px;
       font-family: 'Roboto', sans-serif;
       display: flex;
-      justify-content: center; }
+      justify-content: center;
+      flex-direction: column; }
       body .main .content .loginborder {
+        align-self: center;
+        width: 500px;
         background-color: #fff;
         margin: 30px 0;
         padding: 30px 0;
         box-shadow: 0px 0px 10px #ddd;
-        border-radius: 3px;
-        flex-basis: 35%; }
+        border-radius: 3px; }
         body .main .content .loginborder h1 {
           font-weight: 600;
           color: #333;
@@ -100,5 +103,36 @@ body {
       body .main .content .registerborder {
         padding: 30px 0 10px 0;
         flex-basis: 50%; }
+      body .main .content .addWordsBorder {
+        display: flex;
+        flex-direction: column;
+        width: 500px;
+        align-self: center; }
+        body .main .content .addWordsBorder form#addwordsform {
+          width: 100%;
+          align-self: center;
+          display: flex;
+          flex-direction: column; }
+          body .main .content .addWordsBorder form#addwordsform .newword {
+            margin-bottom: 5px;
+            display: flex;
+            justify-content: space-between; }
+            body .main .content .addWordsBorder form#addwordsform .newword input {
+              width: 45%;
+              padding: 5px 10px;
+              border: 1px solid #999;
+              border-radius: 5px; }
+        body .main .content .addWordsBorder .addWordsButtons {
+          margin-top: 10px;
+          margin-bottom: 20px;
+          display: flex;
+          justify-content: space-between; }
+          body .main .content .addWordsBorder .addWordsButtons button {
+            cursor: pointer;
+            padding: 5px 10px;
+            border: 1px solid #fff;
+            border-radius: 5px;
+            color: #fff;
+            background-color: #48B484; }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,3 +1,3 @@
-<h1>test page</h1>
+<h1>pass the test</h1>
 
 <?php if($error !== '') { echo '<div class="error">'.$error.'</div>'; } ?>
