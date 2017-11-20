@@ -10,7 +10,23 @@ $(document).ready(function(){
 		nextid++;
 	});
 	$('#sendWords').click(function(){
-		$('#addwordsform').submit();
-	});
+		//$('#addwordsform').submit();
 
+		var words = {};
+		$('#addwordsform').find ('input').each(function() {
+			words[this.name] = $(this).val();
+		});
+
+		$.ajax({
+			type:'POST',
+			url:'/api/api.index.php?func=addWords',
+			data: words,
+			success: function(msg) {
+				if(msg > 0)
+					showMessage('.success', 'Слова успешно добавлены!', 1000);
+				else
+					showMessage('.error', 'Ошибка добавления!', 1000);
+			}
+		});
+	});
 });

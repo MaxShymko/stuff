@@ -29,6 +29,8 @@
 			<?php include_once(ROOT.'/templates/'.$tpl.'.tpl.php'); ?>
 		</div>
 	</div>
+	
+	<div class="messageDiv"></div>
 
 	<script src="/sys/js/jquery-3.2.1.min.js"></script>
 	<script src="/sys/js/main.js"></script>

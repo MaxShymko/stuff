@@ -19,7 +19,7 @@ a {
 	text-decoration: none;
 }
 
-.error {
+.logError {
 	margin: 20px 0 0 0;
 	color: #333;
 	background-color: #FFBABA;
@@ -27,6 +27,32 @@ a {
 	text-align: center;
 	font-family: 'Poppins', sans-serif;
 	font-weight: 600;
+}
+
+.error, .success {
+	z-index:9999;
+	min-width: 300px;
+	padding: 10px 10px;
+	margin-top: 10px;
+	color: #fff;
+	border-radius: 10px;
+	text-align: center;
+	box-shadow: 2px 2px 5px rgba(0, 0, 0, .5);
+}
+.success {
+	background: linear-gradient(0deg, #1c7e28, #31d644);
+}
+.error {
+	background: linear-gradient(0deg, #981212, #ee4141);
+}
+.messageDiv {
+	z-index:9998;
+	position: fixed;
+	bottom: 5%;
+	right: 3%;
+	background-color: transparent;
+	min-width: 300px;
+
 }
 
 body {

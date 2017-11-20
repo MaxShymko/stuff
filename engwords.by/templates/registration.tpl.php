@@ -16,5 +16,5 @@
 		<input id="formlogsub" type="submit" value="Регистрация" name="submit">
 	</form>
 	<p>Уже есть аккаунт? <a href="/login">Войти</a></p>
-	<?php if($error !== '') { echo '<div class="error">'.$error.'</div>'; } ?>
+	<?php if($error !== '') { echo '<div class="logError">'.$error.'</div>'; } ?>
 </div>

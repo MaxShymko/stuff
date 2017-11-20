@@ -3,8 +3,8 @@
 <div class="addWordsBorder">
 	<form action="/api/api.index.php?func=addWords" method="POST" id="addwordsform">
 		<div class="newword" id="newword_0">
-			<input type="text" name="eng_0" id="eng" placeholder="word" maxlength="20" required>
-			<input type="text" name="rus_0" id="rus" placeholder="перевод" maxlength="20" required>
+			<input class="engWord" type="text" name="eng_0" id="eng" placeholder="word" maxlength="20" required>
+			<input class="rusWord" type="text" name="rus_0" id="rus" placeholder="перевод" maxlength="20" required>
 		</div>
 	</form>
 	<div class="addWordsButtons">
@@ -13,4 +13,4 @@
 	</div>
 </div>
 
-<?php if($error !== '') { echo '<div class="error">'.$error.'</div>'; } ?>
+<!-- <?php if($error !== '') { echo '<div class="error">'.$error.'</div>'; } ?> -->
