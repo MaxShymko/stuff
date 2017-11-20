@@ -1,5 +1,6 @@
 $(document).ready(function(){
-	var nextid = 1;
+	var nextid = 1;//Ид полей для добавления
+	var totalWords = 0;
 	$('#addWordInp').click(function(){
 		$('#addwordsform').append('\
 			<div class="newword" id="newword_'+(nextid)+'">\
@@ -22,10 +23,24 @@ $(document).ready(function(){
 			url:'/api/api.index.php?func=addWords',
 			data: words,
 			success: function(msg) {
-				if(msg > 0)
+				if(msg > 0) {
+					$('#wordsCounter').text(msg);
 					showMessage('.success', 'Слова успешно добавлены!', 1000);
-				else
-					showMessage('.error', 'Ошибка добавления!', 1000);
+				}
+				else{
+					showMessage('.error', 'Ошибка добавления! ', 1000);
+				}
+			}
+		});
+	});
+
+	$('#loadMoreWords').click(function(){
+		$.ajax({
+			type:'POST',
+			url:'/api/api.index.php?func=loadWords',
+			data: totalWords,
+			success: function(msg) {
+				
 			}
 		});
 	});

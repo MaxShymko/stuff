@@ -32,7 +32,7 @@ function dbRegister($pdo, $login, $email, $password){
 	$stmt = $pdo->query($sql_check);
 	$row = $stmt->fetch(PDO::FETCH_NUM);
 	if($row[0] > 0) {
-	    return 'Аккаунт с тиким логином уже зарегистрирован!';
+	    return 'Аккаунт с таким логином уже зарегистрирован!';
 	}
 	$sql_check = "SELECT COUNT(id) FROM ed_users WHERE email=$email";
 	$stmt = $pdo->query($sql_check);

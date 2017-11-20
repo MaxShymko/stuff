@@ -14,11 +14,11 @@ function API_addWords($mas)
 		if($i % 2 == 0) {//eng
 			$eng = $word;
 		}
-		else {//rus
-			$len  = strlen($eng);
+		else {//rus			
+			$len  = iconv_strlen($eng);
 			if($len == 0 || $len > 20)
 				return '-2';
-			$len = strlen($word);
+			$len = iconv_strlen($word);
 			if($len == 0 || $len > 20)
 				return '-3';
 			
@@ -34,6 +34,10 @@ function API_addWords($mas)
 
 	//return $sql_delete.$sql_insert;
 	$pdo->exec($sql_delete);
-	return $pdo->exec($sql_insert) * 1;
+	$result = $pdo->exec($sql_insert) * 1;
+	if($result == 0)
+		return '0';
+	else
+		return getWordsCount($pdo, $owner);
 }
 ?>

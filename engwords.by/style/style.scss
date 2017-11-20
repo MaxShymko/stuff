@@ -103,6 +103,9 @@ body {
 			display: flex;
 			justify-content: center;
 			flex-direction: column;
+			h1 {
+				text-align: center;
+			}
 			.loginborder {
 				align-self: center;
 				width: 500px;
@@ -115,7 +118,6 @@ body {
 					font-weight: 600;
 					color: #333;
 					font-size: 30px;
-					text-align: center;
 				}
 				form#login, form#registration {
 					color: #333;
@@ -183,11 +185,38 @@ body {
 					button {
 						cursor: pointer;
 						padding: 5px 10px;
-						border: 1px solid #fff;
+						border: 1px solid transparent;
 						border-radius: 5px;
 						color: #fff;
 						background-color: #48B484;
 					}
+				}
+				table {
+					align-self: center;
+					min-width: 500px;
+					border-collapse: collapse;
+					border: 1px solid #999;
+					caption {
+						font-size: 30px;
+						margin: 10px 0;
+					}
+					tr {
+					}
+					td,th {
+						//border: 1px solid #999;
+						padding: 10px 5px;
+						text-align: center;
+					}
+				}
+				button#loadMoreWords {
+					margin: 20px 0;
+					//width: 100px;
+					cursor: pointer;
+					padding: 5px 10px;
+					border: 1px solid transparent;
+					border-radius: 5px;
+					color: #fff;
+					background-color: #48B484;
 				}
 			}
 		}
