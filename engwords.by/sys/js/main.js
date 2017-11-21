@@ -33,5 +33,15 @@ var showMessage = (function() {
 
 $(document).ready(function(){
 
-	include('/sys/js/addWords.js');
+	var str = location.href.match(/\w+$/).join('');
+
+	switch(str) {
+		case 'addwords':
+			include('/sys/js/addWords.js');
+		break;
+		case 'test':
+			include('/sys/js/testWords.js');
+		break;
+	}
+
 });

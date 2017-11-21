@@ -89,6 +89,7 @@ body {
 					a {
 						padding: 10px 0;
 						color: #fff;
+						transition: 0.2s;
 						&:hover {
 							color: #48B484;
 						}
@@ -189,6 +190,14 @@ body {
 						border-radius: 5px;
 						color: #fff;
 						background-color: #48B484;
+						transition: 0.2s;
+						&:hover {
+						box-shadow: 0 0 3px #ccc;
+						}
+						&:active {
+							color: #ffc91a;
+							box-shadow: 0 0 3px #ccc;
+						}
 					}
 				}
 				table {
@@ -196,6 +205,7 @@ body {
 					min-width: 500px;
 					border-collapse: collapse;
 					border: 1px solid #999;
+					margin-bottom: 30px;
 					caption {
 						font-size: 30px;
 						margin: 10px 0;
@@ -203,20 +213,58 @@ body {
 					tr {
 					}
 					td,th {
-						//border: 1px solid #999;
 						padding: 10px 5px;
 						text-align: center;
 					}
 				}
-				button#loadMoreWords {
+			}
+			.testContent {
+				display: flex;
+				flex-direction: column;
+				h1 {
+					margin-bottom: 20px;
+					color: #555;
+				}
+				.showRow {
+					display: flex;
+					justify-content: center;
+					p#engWord, p#rusWord {
+						font-size: 25px;
+						align-self: center;
+						text-align: center;
+						padding: 5px 25px;
+						margin: 20px 15px;
+						border-radius: 3px;
+						background-color: #eaeaea;
+						color: #555;
+					}
+					p#rusWord {
+						cursor: pointer;
+					}
+				}
+				button#nextTestWord {
+					font-size: 18px;
+					align-self: center;
 					margin: 20px 0;
-					//width: 100px;
+					width: 100px;
 					cursor: pointer;
 					padding: 5px 10px;
 					border: 1px solid transparent;
 					border-radius: 5px;
 					color: #fff;
 					background-color: #48B484;
+					transition: 0.2s;
+					&:hover {
+						box-shadow: 0 0 3px #ccc;
+					}
+					&:active {
+						color: #ffc91a;
+						box-shadow: 0 0 3px #ccc;
+					}
+				}
+				p#emptyDict {
+					text-align: center;
+					margin: 30px 0;
 				}
 			}
 		}

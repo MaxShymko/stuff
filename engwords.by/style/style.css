@@ -76,7 +76,8 @@ body {
           font-family: 'Montserrat', sans-serif; }
           body .main .header .links ul li a {
             padding: 10px 0;
-            color: #fff; }
+            color: #fff;
+            transition: 0.2s; }
             body .main .header .links ul li a:hover {
               color: #48B484; }
     body .main .content {
@@ -158,25 +159,64 @@ body {
             border: 1px solid transparent;
             border-radius: 5px;
             color: #fff;
-            background-color: #48B484; }
+            background-color: #48B484;
+            transition: 0.2s; }
+            body .main .content .addWordsBorder .addWordsButtons button:hover {
+              box-shadow: 0 0 3px #ccc; }
+            body .main .content .addWordsBorder .addWordsButtons button:active {
+              color: #ffc91a;
+              box-shadow: 0 0 3px #ccc; }
         body .main .content .addWordsBorder table {
           align-self: center;
           min-width: 500px;
           border-collapse: collapse;
-          border: 1px solid #999; }
+          border: 1px solid #999;
+          margin-bottom: 30px; }
           body .main .content .addWordsBorder table caption {
             font-size: 30px;
             margin: 10px 0; }
           body .main .content .addWordsBorder table td, body .main .content .addWordsBorder table th {
             padding: 10px 5px;
             text-align: center; }
-        body .main .content .addWordsBorder button#loadMoreWords {
+      body .main .content .testContent {
+        display: flex;
+        flex-direction: column; }
+        body .main .content .testContent h1 {
+          margin-bottom: 20px;
+          color: #555; }
+        body .main .content .testContent .showRow {
+          display: flex;
+          justify-content: center; }
+          body .main .content .testContent .showRow p#engWord, body .main .content .testContent .showRow p#rusWord {
+            font-size: 25px;
+            align-self: center;
+            text-align: center;
+            padding: 5px 25px;
+            margin: 20px 15px;
+            border-radius: 3px;
+            background-color: #eaeaea;
+            color: #555; }
+          body .main .content .testContent .showRow p#rusWord {
+            cursor: pointer; }
+        body .main .content .testContent button#nextTestWord {
+          font-size: 18px;
+          align-self: center;
           margin: 20px 0;
+          width: 100px;
           cursor: pointer;
           padding: 5px 10px;
           border: 1px solid transparent;
           border-radius: 5px;
           color: #fff;
-          background-color: #48B484; }
+          background-color: #48B484;
+          transition: 0.2s; }
+          body .main .content .testContent button#nextTestWord:hover {
+            box-shadow: 0 0 3px #ccc; }
+          body .main .content .testContent button#nextTestWord:active {
+            color: #ffc91a;
+            box-shadow: 0 0 3px #ccc; }
+        body .main .content .testContent p#emptyDict {
+          text-align: center;
+          margin: 30px 0; }
 
 /*# sourceMappingURL=style.css.map */

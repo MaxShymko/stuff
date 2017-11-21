@@ -23,6 +23,6 @@
 		<?=generateWordsTable($GLOBALS['pdo'], $GLOBALS['this_id']);?>
 	</table>
 
-	<button id="loadMoreWords">Загрузить ещё</button>
+	<!-- <button id="loadMoreWords">Загрузить ещё</button> -->
 
 </div>

@@ -11,7 +11,7 @@ function getWordsCount($pdo, $id) {
 }
 function generateWordsTable($pdo, $id){
 	$str = '';
-	$sql_select = "SELECT eng, rus FROM ed_words WHERE owner=".$id." LIMIT 20";
+	$sql_select = "SELECT eng, rus FROM ed_words WHERE owner=".$id." ORDER BY id DESC LIMIT 20";
 	$i = 1;
     foreach ($pdo->query($sql_select) as $row) {
 		$str .= "<tr><td>".$i."</td><td>".$row['eng']."</td><td>".$row['rus']."</td></tr>";

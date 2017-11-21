@@ -25,13 +25,17 @@
 			$error = loginCode();
 			$tpl = "login";
 		break;
+		case 'test':
+			$error = testCode();
+			$tpl = "test";
+		break;
 		case 'addwords':
-			$error = addwordsCode();
+			//$error = addwordsCode();
 			$tpl = "addwords";
 		break;
 		default:
-			$error = testCode();
-			$tpl = "test";
+			header('Location: /addwords');
+		break;
 	}
 	include_once(ROOT.'/templates/index.tpl.php');
 ?>
