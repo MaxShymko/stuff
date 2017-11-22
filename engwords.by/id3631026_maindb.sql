@@ -8,10 +8,10 @@ DROP TABLE IF EXISTS `ed_users`;
 
 CREATE TABLE `ed_users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `login` varchar(10) NOT NULL UNIQUE,
-  `email` varchar(50) NOT NULL UNIQUE,
+  `login` varchar(30) NOT NULL UNIQUE,
+  `email` varchar(30) NOT NULL UNIQUE,
   `password` varchar(32) NOT NULL,
-  `hash` varchar(50) DEFAULT NULL,
+  `hash` varchar(32) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 

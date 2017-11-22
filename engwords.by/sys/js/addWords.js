@@ -44,12 +44,21 @@ $(document).ready(function(){
 			url:'/api/api.index.php?func=addWords',
 			data: words,
 			success: function(msg) {
+				if(msg == '0') {
+					showMessage('.error', 'Ошибка добавления!', 2000);
+				}
+				if(msg == '-1') {
+					showMessage('.error', 'Ошибка авторизации!', 2000);
+				}
+				if(msg == '-2' || msg == '-3') {
+					showMessage('.error', 'Слово не может не содержать и быть длиннее 20 символов!', 2000);
+				}
+				if(msg == '-4') {
+					showMessage('.error', 'Слово на англ. должно содержать только англ. символы!', 2000);
+				}
 				if(msg > 0) {
 					$('#wordsCounter').text(msg);
 					showMessage('.success', 'Слова успешно добавлены!', 2000);
-				}
-				else{
-					showMessage('.error', 'Ошибка добавления!', 2000);
 				}
 			}
 		});

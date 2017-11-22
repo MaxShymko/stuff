@@ -22,8 +22,11 @@ function dbInit(){
 	return $pdo;
 }
 function dbRegister($pdo, $login, $email, $password){
-	$oldlogin = $login;
-	$oldpassword = $password;
+	if(iconv_strlen($login) > 30)
+		return 'Максимальная длина логина 30 символов!';
+	if(iconv_strlen($email) > 30)
+		return 'Максимальная длина почты 30 символов!';
+	
 	$login = $pdo->quote($login);
 	$email = $pdo->quote($email);
 	$password = $pdo->quote(md5($password));
@@ -64,7 +67,7 @@ function dbLogin($pdo, $login, $password){
 	$login = $pdo->quote($login);
 	$password = md5($password);
 
-	$sql = "SELECT id, password FROM ed_users WHERE login=$login";
+	$sql = "SELECT id, password FROM ed_users WHERE login=$login OR email=$login LIMIT 1";
 	if(!$stmt = $pdo->query($sql)){
 		exit('Ошибка в запросе dbLogin 1');
 	} 

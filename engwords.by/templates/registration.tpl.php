@@ -2,10 +2,10 @@
 	<h1>Зарегистрировать аккаунт</h1>
 	<form action="/registration" method="POST" id="registration">
 		Логин<br>
-		<input class="formlogtext" type="text" name="login" maxlength="10" value="<?=$_POST['login']?>" required>
+		<input class="formlogtext" type="text" name="login" maxlength="30" value="<?=$_POST['login']?>" required>
 		<br><br>
 		email<br>
-		<input class="formlogtext" type="email" name="email" maxlength="50" value="<?=$_POST['email']?>" required>
+		<input class="formlogtext" type="email" name="email" maxlength="30" value="<?=$_POST['email']?>" required>
 		<br><br>
 		Пароль<br>
 		<input class="formlogtext" type="password" name="password1" maxlength="30" required>

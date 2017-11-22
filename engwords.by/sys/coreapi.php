@@ -21,9 +21,13 @@ function API_addWords($mas)
 			$len = iconv_strlen($word);
 			if($len == 0 || $len > 20)
 				return '-3';
+
+			if(preg_match('/[^a-zA-Z_\s\-0-9]+/i', $eng))
+				return '-4';
 			
 			$word = $pdo->quote($word);
 			$eng = $pdo->quote($eng);
+
 			$sql_delete .= " eng LIKE $eng OR";
 			$sql_insert .= "($eng,$word,$owner),";
 		}
