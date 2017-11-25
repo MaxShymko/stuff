@@ -11,6 +11,20 @@ input:focus, button:focus {
 a {
   text-decoration: none; }
 
+button {
+  cursor: pointer;
+  padding: 5px 10px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  color: #fff;
+  background-color: #48B484;
+  transition: 0.2s; }
+  button:hover {
+    box-shadow: 0 0 3px #ccc; }
+  button:active {
+    color: #ffc91a;
+    box-shadow: 0 0 3px #ccc; }
+
 .logError {
   margin: 20px 0 0 0;
   color: #333;
@@ -148,24 +162,23 @@ body {
               padding: 5px 10px;
               border: 1px solid #999;
               border-radius: 5px; }
-        body .main .content .addWordsBorder .addWordsButtons {
-          margin-top: 10px;
-          margin-bottom: 20px;
+        body .main .content .addWordsBorder .preWordPlace {
+          margin: 0 0 15px 0;
           display: flex;
           justify-content: space-between; }
-          body .main .content .addWordsBorder .addWordsButtons button {
-            cursor: pointer;
-            padding: 5px 10px;
-            border: 1px solid transparent;
-            border-radius: 5px;
-            color: #fff;
-            background-color: #48B484;
+          body .main .content .addWordsBorder .preWordPlace a {
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+            font-size: 13px;
+            opacity: 0.7;
             transition: 0.2s; }
-            body .main .content .addWordsBorder .addWordsButtons button:hover {
-              box-shadow: 0 0 3px #ccc; }
-            body .main .content .addWordsBorder .addWordsButtons button:active {
-              color: #ffc91a;
-              box-shadow: 0 0 3px #ccc; }
+            body .main .content .addWordsBorder .preWordPlace a:hover {
+              opacity: 1; }
+            body .main .content .addWordsBorder .preWordPlace a:active {
+              color: #333; }
+        body .main .content .addWordsBorder button#sendWords {
+          margin: 15px auto;
+          width: 200px; }
         body .main .content .addWordsBorder table {
           align-self: center;
           min-width: 500px;
@@ -198,6 +211,8 @@ body {
             color: #555; }
           body .main .content .testContent .showRow p#rusWord {
             cursor: pointer; }
+        body .main .content .testContent .answer input {
+          padding: 10px; }
         body .main .content .testContent button#nextTestWord {
           font-size: 18px;
           align-self: center;

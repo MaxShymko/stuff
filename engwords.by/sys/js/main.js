@@ -19,7 +19,7 @@ var showMessage = (function() {
 		$('#showMess_'+i).slideDown(300, function(){
 			$(this).delay(delay).slideUp(300, function(){
 				if($(this).length) {
-					console.log($(this).parent().attr('id'));
+					//console.log($(this).parent().attr('id'));
 					$(this).parent().remove();
 					messCount = messCount > 0 ? messCount - 1 : 0;
 				}

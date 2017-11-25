@@ -4,5 +4,9 @@
 		<p id="engWord"></p>
 		<p id="rusWord">?</p>
 	</div>
+	<div class="answer">
+		<input name="answer" type="radio">
+		<input name="answer" type="radio">
+	</div>
 	<button id="nextTestWord" style="visibility: hidden">next</button>
 </div>

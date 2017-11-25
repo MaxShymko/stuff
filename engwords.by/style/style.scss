@@ -19,6 +19,23 @@ a {
 	text-decoration: none;
 }
 
+button {
+	cursor: pointer;
+	padding: 5px 10px;
+	border: 1px solid transparent;
+	border-radius: 5px;
+	color: #fff;
+	background-color: #48B484;
+	transition: 0.2s;
+	&:hover {
+	box-shadow: 0 0 3px #ccc;
+	}
+	&:active {
+		color: #ffc91a;
+		box-shadow: 0 0 3px #ccc;
+	}
+}
+
 .logError {
 	margin: 20px 0 0 0;
 	color: #333;
@@ -178,27 +195,27 @@ body {
 						}
 					}
 				}
-				.addWordsButtons {
-					margin-top: 10px;
-					margin-bottom: 20px;
+				.preWordPlace {
+					margin: 0 0 15px 0;
 					display: flex;
 					justify-content: space-between;
-					button {
-						cursor: pointer;
-						padding: 5px 10px;
-						border: 1px solid transparent;
-						border-radius: 5px;
-						color: #fff;
-						background-color: #48B484;
+					a {
+						font-family: 'Poppins', sans-serif;
+						color: #333;
+						font-size: 13px;
+						opacity: 0.7;
 						transition: 0.2s;
 						&:hover {
-						box-shadow: 0 0 3px #ccc;
+							opacity: 1;
 						}
 						&:active {
-							color: #ffc91a;
-							box-shadow: 0 0 3px #ccc;
+							color: #333;
 						}
 					}
+				}
+				button#sendWords {
+					margin: 15px auto;
+					width: 200px;
 				}
 				table {
 					align-self: center;
@@ -240,6 +257,11 @@ body {
 					}
 					p#rusWord {
 						cursor: pointer;
+					}
+				}
+				.answer {
+					input {
+						padding: 10px;
 					}
 				}
 				button#nextTestWord {

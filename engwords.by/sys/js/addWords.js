@@ -24,19 +24,54 @@ function showMoreWords() {
 }
 
 $(document).ready(function(){
-	$('#addWordInp').click(function(){
-		$('#addwordsform').append('\
-			<div class="newword" id="newword_'+(nextid)+'">\
-				<input type="text" name="eng_'+(nextid)+'" placeholder="word" maxlength="20" required>\
-				<input type="text" name="rus_'+(nextid)+'" placeholder="перевод" maxlength="20" required>\
-			</div>'
-		);
-		nextid++;
+	
+	var contextmenu = false;
+	$('#addWordInp').mousedown(function(event){
+		if(event.which == 1)//ЛКМ
+		{
+			$('#addwordsform').append('\
+				<div class="newword" id="newword_'+(nextid)+'">\
+					<input class="engWord" type="text" id="eng_'+(nextid)+'" placeholder="word" maxlength="20" required>\
+					<input type="text" id="rus_'+(nextid)+'" placeholder="перевод" maxlength="20" required>\
+				</div>'
+			);
+			nextid++;
+		}
+		else if(event.which == 3 && nextid > 1) {//ПКМ
+			nextid--;
+			$('#newword_'+nextid).remove();
+			contextmenu = true;
+		}
 	});
+	$('body').bind('contextmenu', function(e) {
+		if(contextmenu) {
+			contextmenu = false;
+			return false;
+		}
+	});
+	$('#addWordInp').bind('contextmenu', function(e) {
+		return false;
+	});
+	
+	$('body').delegate('.engWord', 'change', function(){
+		var id = /\d$/.exec($(this).attr('id'));
+		$.ajax({
+			type:'POST',
+			url:'/api/api.index.php?func=translate',
+			data:'text='+$(this).val(),
+			success: function(msg) {
+				var response = JSON.parse(msg);
+				if(response.code == 200) {
+					$('#rus_'+id).val(response.text);
+				}
+			}
+		});
+	});
+
 	$('#sendWords').click(function(){
 		var words = {};
-		$('#addwordsform').find ('input').each(function() {
-			words[this.name] = $(this).val();
+		$('#addwordsform').find('input').each(function() {
+			words[this.id] = $(this).val();
 		});
 
 		$.ajax({
@@ -51,7 +86,7 @@ $(document).ready(function(){
 					showMessage('.error', 'Ошибка авторизации!', 2000);
 				}
 				if(msg == '-2' || msg == '-3') {
-					showMessage('.error', 'Слово не может не содержать и быть длиннее 20 символов!', 2000);
+					showMessage('.error', 'Слово не может не содержать или быть длиннее 20 символов!', 2000);
 				}
 				if(msg == '-4') {
 					showMessage('.error', 'Слово на англ. должно содержать только англ. символы!', 2000);

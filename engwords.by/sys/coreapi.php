@@ -36,7 +36,6 @@ function API_addWords($mas)
 	$sql_delete = substr($sql_delete, 0, -3)." AND owner=$owner;";
 	$sql_insert = substr($sql_insert, 0, -1).';';
 
-	//return $sql_delete.$sql_insert;
 	$pdo->exec($sql_delete);
 	$result = $pdo->exec($sql_insert) * 1;
 	if($result == 0)
@@ -78,5 +77,23 @@ function API_loadWord($mas)
 		return '-3';
 
 	return json_encode($row);
+}
+function API_translate($mas)
+{
+	$url = 'https://translate.yandex.net/api/v1.5/tr.json/translate';
+	$params = array(
+		'key' => 'trnsl.1.1.20171124T104006Z.59038034f7dd1376.6b3546ca7deedcd0e4e231fff352f8a8f7ac3ceb',
+		'lang' => 'en-ru',
+	    'text' => $mas['text']
+	);
+	$result = file_get_contents($url, false, stream_context_create(array(
+	    'http' => array(
+	        'method'  => 'POST',
+	        'header'  => 'Content-type: application/x-www-form-urlencoded',
+	        'content' => http_build_query($params)
+	    )
+	)));
+
+	echo $result;
 }
 ?>

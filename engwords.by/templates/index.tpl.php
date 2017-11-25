@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>engwords</title>
+	<title>EngDict</title>
 	<link rel="stylesheet" href="/style/style.css">
+	<link rel="shortcut icon" href="/style/img/favicon.gif" type="image/gif">
 </head>
 <body>
 	<div class="main">
@@ -14,8 +15,7 @@
 			<div class="links">
 				<ul>
 					<li>
-						<?php
-						if($GLOBALS['this_id'] == 0) 
+						<?php if($GLOBALS['this_id'] == 0) 
 							echo '<a href="/login">Login</a>';
 						else 
 							echo '<a href="/logout">Logout</a>';?>
