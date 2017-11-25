@@ -25,7 +25,6 @@ function showMoreWords() {
 
 $(document).ready(function(){
 	
-	var contextmenu = false;
 	$('#addWordInp').mousedown(function(event){
 		if(event.which == 1)//ЛКМ
 		{
@@ -40,13 +39,6 @@ $(document).ready(function(){
 		else if(event.which == 3 && nextid > 1) {//ПКМ
 			nextid--;
 			$('#newword_'+nextid).remove();
-			contextmenu = true;
-		}
-	});
-	$('body').bind('contextmenu', function(e) {
-		if(contextmenu) {
-			contextmenu = false;
-			return false;
 		}
 	});
 	$('#addWordInp').bind('contextmenu', function(e) {

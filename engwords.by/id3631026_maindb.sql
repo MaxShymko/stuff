@@ -20,6 +20,9 @@ CREATE TABLE `ed_words` (
   `eng` varchar(20) NOT NULL,
   `rus` varchar(20) NOT NULL,
   `owner` int(11) NOT NULL,
+  `attempts` int(11) NOT NULL DEFAULT '0',
+  `success` int(11) NOT NULL DEFAULT '0',
+  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   FOREIGN KEY (`owner`) REFERENCES `ed_users` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
