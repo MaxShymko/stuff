@@ -1,0 +1,5 @@
+host
+Адрес ПУА: https://cp.beget.com
+Имя пользователя: b29312pc
+Пароль: fJISpVzg
+Сервер: free24

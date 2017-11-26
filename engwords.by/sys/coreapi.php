@@ -10,17 +10,18 @@ function API_addWords($mas)
 	if($owner == 0){
 		return '-1';
 	}
+
 	foreach ($mas as $word) {
 		if($i % 2 == 0) {//eng
 			$eng = $word;
 		}
-		else {//rus			
-			$len  = iconv_strlen($eng);
+		else {//rus		
+			$len  = mb_strlen($eng);
 			if($len == 0 || $len > 20)
 				return '-2';
-			$len = iconv_strlen($word);
+			$len = mb_strlen($word);
 			if($len == 0 || $len > 20)
-				return '-3';
+				return $len;//'-3';
 
 			if(preg_match('/[^a-zA-Z_\s\-0-9]+/i', $eng))
 				return '-4';

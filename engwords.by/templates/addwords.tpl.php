@@ -10,6 +10,7 @@
 			<input class="engWord" type="text" id="eng_0" placeholder="word" maxlength="20" required>
 			<input type="text" id="rus_0" placeholder="перевод" maxlength="20" required>
 		</div>
+		<p id="translateItem_0" style="display: none;">Примерный перевод: <span class="translate" id="translateWord_0" title="Добавить перевод"></span></p>
 	</form>
 	<button id="sendWords">Добавить в словарь</button>
 	<br>

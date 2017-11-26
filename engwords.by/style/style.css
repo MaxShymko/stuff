@@ -154,7 +154,7 @@ body {
           display: flex;
           flex-direction: column; }
           body .main .content .addWordsBorder form#addwordsform .newword {
-            margin-bottom: 5px;
+            margin-top: 5px;
             display: flex;
             justify-content: space-between; }
             body .main .content .addWordsBorder form#addwordsform .newword input {
@@ -162,6 +162,13 @@ body {
               padding: 5px 10px;
               border: 1px solid #999;
               border-radius: 5px; }
+          body .main .content .addWordsBorder form#addwordsform p {
+            margin: 2px 0;
+            font-size: 12px; }
+            body .main .content .addWordsBorder form#addwordsform p span {
+              text-decoration: underline;
+              cursor: pointer;
+              padding: 3px 0; }
         body .main .content .addWordsBorder .preWordPlace {
           margin: 0 0 15px 0;
           display: flex;

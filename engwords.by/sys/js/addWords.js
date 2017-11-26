@@ -32,17 +32,24 @@ $(document).ready(function(){
 				<div class="newword" id="newword_'+(nextid)+'">\
 					<input class="engWord" type="text" id="eng_'+(nextid)+'" placeholder="word" maxlength="20" required>\
 					<input type="text" id="rus_'+(nextid)+'" placeholder="перевод" maxlength="20" required>\
-				</div>'
+				</div>\
+				<p id="translateItem_'+(nextid)+'" style="display: none;">Примерный перевод: <span class="translate" id="translateWord_'+(nextid)+'" title="Добавить перевод"></span></p>'
 			);
 			nextid++;
 		}
 		else if(event.which == 3 && nextid > 1) {//ПКМ
 			nextid--;
 			$('#newword_'+nextid).remove();
+			$('#translateItem_'+nextid).remove();
 		}
 	});
 	$('#addWordInp').bind('contextmenu', function(e) {
 		return false;
+	});
+
+	$('body').delegate('.translate', 'click', function(){
+		var id = /\d$/.exec($(this).attr('id'));
+		$('#rus_'+id).val($('#translateWord_'+id).text());
 	});
 	
 	$('body').delegate('.engWord', 'change', function(){
@@ -54,7 +61,9 @@ $(document).ready(function(){
 			success: function(msg) {
 				var response = JSON.parse(msg);
 				if(response.code == 200) {
-					$('#rus_'+id).val(response.text);
+					var translate = $('#translateWord_'+id);
+					$('#translateWord_'+id).text(response.text);
+					$('#translateItem_'+id).css('display', 'inline');
 				}
 			}
 		});
