@@ -20,7 +20,7 @@
 						else 
 							echo '<a href="/logout">Logout</a>';?>
 					</li>
-					<li><a href="/addwords">Add words</a></li>
+					<li><a href="/mywords">My words</a></li>
 					<li><a href="/test">Pass the test</a></li>
 				</ul>
 			</div>

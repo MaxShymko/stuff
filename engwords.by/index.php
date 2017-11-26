@@ -33,8 +33,12 @@
 			//$error = addwordsCode();
 			$tpl = "addwords";
 		break;
+		case 'mywords':
+			//$error = mywordsCode();
+			$tpl = "mywords";
+		break;
 		default:
-			header('Location: /addwords');
+			header('Location: /mywords');
 		break;
 	}
 	include_once(ROOT.'/templates/index.tpl.php');

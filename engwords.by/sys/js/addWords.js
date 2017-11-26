@@ -35,12 +35,20 @@ $(document).ready(function(){
 				</div>\
 				<p id="translateItem_'+(nextid)+'" style="display: none;">Примерный перевод: <span class="translate" id="translateWord_'+(nextid)+'" title="Добавить перевод"></span></p>'
 			);
+			if(nextid == 1)
+				$('#addWordInp').attr('title', 'ПКМ - удалить поле');
+
 			nextid++;
 		}
-		else if(event.which == 3 && nextid > 1) {//ПКМ
-			nextid--;
-			$('#newword_'+nextid).remove();
-			$('#translateItem_'+nextid).remove();
+		else if(event.which == 3) {//ПКМ
+			if(nextid > 1) {
+				nextid--;
+				$('#newword_'+nextid).remove();
+				$('#translateItem_'+nextid).remove();
+			}
+			if(nextid <= 1) {
+				$('#addWordInp').attr('title', 'Добавить поле');
+			}
 		}
 	});
 	$('#addWordInp').bind('contextmenu', function(e) {

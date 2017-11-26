@@ -13,7 +13,7 @@
 		<p id="translateItem_0" style="display: none;">Примерный перевод: <span class="translate" id="translateWord_0" title="Добавить перевод"></span></p>
 	</form>
 	<button id="sendWords">Добавить в словарь</button>
-	<br>
+	<!-- <br>
 
 	<table border="1" id="wordsTable">
 		<caption>Всего слов: <span id="wordsCounter"><?=getWordsCount($GLOBALS['pdo'], $GLOBALS['this_id']);?></span></caption>
@@ -23,5 +23,5 @@
 			<th>Русский</th>
 		</tr>
 		<?=generateWordsTable($GLOBALS['pdo'], $GLOBALS['this_id']);?>
-	</table>
+	</table> -->
 </div>

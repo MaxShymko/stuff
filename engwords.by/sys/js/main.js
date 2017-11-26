@@ -39,6 +39,9 @@ $(document).ready(function(){
 		case 'addwords':
 			include('/sys/js/addWords.js');
 		break;
+		case 'mywords':
+			include('/sys/js/myWords.js');
+		break;
 		case 'test':
 			include('/sys/js/testWords.js');
 		break;
