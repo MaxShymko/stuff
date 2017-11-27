@@ -1,27 +1,4 @@
 var nextid = 1;//Ид полей для добавления
-var totalWords = 0;//Сколько слов уже загружено
-
-function showMoreWords() {
-	totalWords = $('table#wordsTable tr').length-1;
-	$.ajax({
-		type:'POST',
-		url:'/api/api.index.php?func=loadWords',
-		data: 'wordsCount='+totalWords,
-		success: function(msg) {
-			var words = JSON.parse(msg);			
-
-			if(!words.length)
-				return;
-
-			var i = totalWords + 1;
-
-			words.forEach(function(word){
-				$("#wordsTable").append("<tr><td>"+i+"</td><td>"+word.eng+"</td><td>"+word.rus+"</td></tr>");
-				i++;
-			});
-		}
-	});
-}
 
 $(document).ready(function(){
 	
@@ -30,8 +7,8 @@ $(document).ready(function(){
 		{
 			$('#addwordsform').append('\
 				<div class="newword" id="newword_'+(nextid)+'">\
-					<input class="engWord" type="text" id="eng_'+(nextid)+'" placeholder="word" maxlength="20" required>\
-					<input type="text" id="rus_'+(nextid)+'" placeholder="перевод" maxlength="20" required>\
+					<input class="engWord" type="text" id="eng_'+(nextid)+'" placeholder="английский" maxlength="20" required>\
+					<input type="text" id="rus_'+(nextid)+'" placeholder="русский" maxlength="20" required>\
 				</div>\
 				<p id="translateItem_'+(nextid)+'" style="display: none;">Примерный перевод: <span class="translate" id="translateWord_'+(nextid)+'" title="Добавить перевод"></span></p>'
 			);
@@ -72,6 +49,7 @@ $(document).ready(function(){
 					var translate = $('#translateWord_'+id);
 					$('#translateWord_'+id).text(response.text);
 					$('#translateItem_'+id).css('display', 'inline');
+					$('#yandexLink').css('visibility', 'visible');
 				}
 			}
 		});

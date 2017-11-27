@@ -56,7 +56,7 @@ function API_loadWords($mas)
 
 	return json_encode($rows);
 }
-function API_loadWord($mas)
+function API_loadTestWord($mas)
 {
 	$wordNum = clearInt($mas['wordNum']);
 	$pdo = dbInit();
@@ -78,6 +78,26 @@ function API_loadWord($mas)
 		return '-3';
 
 	return json_encode($row);
+}
+function API_updateWordStat($mas) {
+	$pdo = dbInit();
+	$owner = check($pdo, $_COOKIE['id'], $_COOKIE['hash']);
+	if($owner == 0)
+		return '-1';
+
+	$eng = $pdo->quote(clearStr($mas['eng']));
+	$success = clearStr($mas['success']);
+
+	$sql_update = 'UPDATE ed_words SET attempts=attempts+1';
+
+	if($success === '1')
+		$sql_update .= ', success=success+1';
+
+	$sql_update .= " WHERE eng=$eng AND owner=$owner;";
+
+	$result = $pdo->exec($sql_update) * 1;
+
+	return $result;
 }
 function API_translate($mas)
 {

@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,600');
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400');
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,600,400i&subset=cyrillic,600&subset=cyrillic');
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,600,400i&subset=cyrillic');
 
 * {
 	margin: 0;
@@ -273,31 +273,29 @@ body {
 					}
 					p#rusWord {
 						cursor: pointer;
+						box-shadow: 0 0 2px rgba(150, 150, 150, 0.5);
+						transition: 0.2s;
+						&:hover {
+							box-shadow: 0 0 5px rgba(150, 150, 150, 1);
+						}
 					}
 				}
-				.answer {
-					input {
-						padding: 10px;
+				#answer {
+					display: flex;
+					flex-direction: row;
+					justify-content: center;
+					margin: 10px 0 30px 0;
+					div {
+						padding: 0 15px;
+						cursor: pointer;
+						color: #333;
+						transition: 0.2s;
 					}
-				}
-				button#nextTestWord {
-					font-size: 18px;
-					align-self: center;
-					margin: 20px 0;
-					width: 100px;
-					cursor: pointer;
-					padding: 5px 10px;
-					border: 1px solid transparent;
-					border-radius: 5px;
-					color: #fff;
-					background-color: #48B484;
-					transition: 0.2s;
-					&:hover {
-						box-shadow: 0 0 3px #ccc;
+					#yes:hover {
+						color: #71cc3f;
 					}
-					&:active {
-						color: #ffc91a;
-						box-shadow: 0 0 3px #ccc;
+					#no:hover {
+						color: #ff5e5e;
 					}
 				}
 				p#emptyDict {

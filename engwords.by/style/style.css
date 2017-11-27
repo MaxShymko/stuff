@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:400,600");
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400");
-@import url("https://fonts.googleapis.com/css?family=Roboto:400,600,400i&subset=cyrillic,600&subset=cyrillic");
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,600,400i&subset=cyrillic");
 * {
   margin: 0;
   padding: 0; }
@@ -224,26 +224,25 @@ body {
             background-color: #eaeaea;
             color: #555; }
           body .main .content .testContent .showRow p#rusWord {
-            cursor: pointer; }
-        body .main .content .testContent .answer input {
-          padding: 10px; }
-        body .main .content .testContent button#nextTestWord {
-          font-size: 18px;
-          align-self: center;
-          margin: 20px 0;
-          width: 100px;
-          cursor: pointer;
-          padding: 5px 10px;
-          border: 1px solid transparent;
-          border-radius: 5px;
-          color: #fff;
-          background-color: #48B484;
-          transition: 0.2s; }
-          body .main .content .testContent button#nextTestWord:hover {
-            box-shadow: 0 0 3px #ccc; }
-          body .main .content .testContent button#nextTestWord:active {
-            color: #ffc91a;
-            box-shadow: 0 0 3px #ccc; }
+            cursor: pointer;
+            box-shadow: 0 0 2px rgba(150, 150, 150, 0.5);
+            transition: 0.2s; }
+            body .main .content .testContent .showRow p#rusWord:hover {
+              box-shadow: 0 0 5px #969696; }
+        body .main .content .testContent #answer {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          margin: 10px 0 30px 0; }
+          body .main .content .testContent #answer div {
+            padding: 0 15px;
+            cursor: pointer;
+            color: #333;
+            transition: 0.2s; }
+          body .main .content .testContent #answer #yes:hover {
+            color: #71cc3f; }
+          body .main .content .testContent #answer #no:hover {
+            color: #ff5e5e; }
         body .main .content .testContent p#emptyDict {
           text-align: center;
           margin: 30px 0; }

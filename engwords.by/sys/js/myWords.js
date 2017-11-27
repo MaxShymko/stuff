@@ -1,5 +1,3 @@
-//var totalWords = 0;//Сколько слов уже загружено
-
 function showMoreWords() {
 	var totalWords = $('table#wordsTable tr').length-1;
 	$.ajax({
