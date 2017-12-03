@@ -9,7 +9,7 @@ function loginCode() {
 
 		$msg = dbLogin($GLOBALS['pdo'], $_POST['login'], $_POST['password']);
 		if($msg == '') {
-			header('Location: /addwords');
+			header('Location: /mywords');
 		}
 		else
 			return $msg;

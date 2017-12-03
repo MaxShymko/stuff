@@ -11,16 +11,16 @@ function loadWord(first) {
 			if(msg == '-1')
 				showMessage('.error', 'Ошибка авторизации!', 2000);
 			else if(msg == '-2') {
-				$('.showRow').hide();
+				$('.showRow, #answer').hide();
 				$('.testContent').append('<p id="emptyDict">Словарь пуст.</p>');
 			}
-			else if(msg == '-3') {
+			else if(msg == '-3' && first !== 'second') {
 				showMessage('.success', 'Конец списка!', 2000);
 				wordNum = 0;
 				loadWord();
 			}
 			else {
-				$('.showRow').css('visibility', 'visible');
+				$('.showRow, #answer').show();
 				var word = JSON.parse(msg);
 
 				nextEngWord = word.eng;
@@ -33,7 +33,7 @@ function loadWord(first) {
 					currentEngWord = nextEngWord;
 					currentRusWord = nextRusWord;
 					$('#engWord').text(currentEngWord);
-					loadWord();
+					loadWord('second');
 				}
 			}
 		}

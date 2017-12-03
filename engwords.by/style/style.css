@@ -78,9 +78,11 @@ body {
       display: flex;
       justify-content: space-between; }
       body .main .header .logo {
-        padding: 5px 15px;
-        font-family: 'Poppins', sans-serif;
-        font-size: 30px; }
+        padding: 5px 15px; }
+        body .main .header .logo a {
+          color: #fff;
+          font-family: 'Poppins', sans-serif;
+          font-size: 30px; }
       body .main .header .links {
         padding: 20px 15px 0px 15px; }
         body .main .header .links ul li {
@@ -146,7 +148,7 @@ body {
       body .main .content .addWordsBorder {
         display: flex;
         flex-direction: column;
-        width: 500px;
+        width: 650px;
         align-self: center; }
         body .main .content .addWordsBorder form#addwordsform {
           width: 100%;
@@ -186,25 +188,38 @@ body {
         body .main .content .addWordsBorder button#sendWords {
           margin: 15px auto;
           width: 200px; }
+        body .main .content .addWordsBorder .caption {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          font-size: 30px;
+          margin: 10px 0; }
+          body .main .content .addWordsBorder .caption a#addwordslink {
+            font-size: 17px;
+            color: #555;
+            opacity: 0.7;
+            transition: 0.2s; }
+            body .main .content .addWordsBorder .caption a#addwordslink:hover {
+              opacity: 1;
+              text-shadow: 1px 1px 1px #ddd; }
         body .main .content .addWordsBorder table {
           align-self: center;
           min-width: 500px;
           border-collapse: collapse;
           border: 1px solid #999;
-          margin-bottom: 30px; }
-          body .main .content .addWordsBorder table caption {
-            font-size: 30px;
-            margin: 10px 0; }
-            body .main .content .addWordsBorder table caption a#addwordslink {
-              font-size: 27px;
-              color: #555;
-              opacity: 0.7;
-              transition: 0.2s; }
-              body .main .content .addWordsBorder table caption a#addwordslink:hover {
-                opacity: 1; }
-          body .main .content .addWordsBorder table td, body .main .content .addWordsBorder table th {
+          margin-bottom: 30px;
+          width: 100%; }
+          body .main .content .addWordsBorder table th, body .main .content .addWordsBorder table td {
             padding: 10px 5px;
             text-align: center; }
+          body .main .content .addWordsBorder table td input {
+            padding: 10px 10px;
+            border: none;
+            font-family: 'Roboto', sans-serif;
+            font-size: 15px;
+            color: #333;
+            text-align: center;
+            background-color: transparent; }
       body .main .content .testContent {
         display: flex;
         flex-direction: column; }

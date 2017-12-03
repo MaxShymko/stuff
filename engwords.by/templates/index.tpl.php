@@ -5,13 +5,13 @@
 	<title>EngDict</title>
 	<link rel="stylesheet" href="/style/style.css">
 	<link rel="stylesheet" href="/font-awesome-4.7.0/css/font-awesome.min.css">
-	<link rel="shortcut icon" href="/style/img/favicon.gif" type="image/gif">
+	<link rel="shortcut icon" href="/style/img/favicon.png" type="image/png">
 </head>
 <body>
 	<div class="main">
 		<div class="header">
 			<div class="logo">
-				EngDict
+				<a href="/mywords">EngDict</a>
 			</div>
 			<div class="links">
 				<ul>
